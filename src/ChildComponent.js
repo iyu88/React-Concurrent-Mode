@@ -14,6 +14,7 @@ export default function ChildComponent() {
 
   return (
     <div>
+      <img src="./image.JPG" alt="테스트 이미지" width="100px" />
       {dummyData.length ? (
         dummyData.map((d) => <h4 key={d.id}>{JSON.stringify(d)}</h4>)
       ) : (
