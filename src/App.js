@@ -1,8 +1,8 @@
 import "./App.css";
-import Transition from "./Transition";
+import DeferredValue from "./DeferredValue";
 
 function App() {
-  return <Transition />;
+  return <DeferredValue />;
 }
 
 export default App;
