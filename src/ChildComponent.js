@@ -1,7 +1,7 @@
 import React from "react";
-import fetchDummyData from "./fetchDummyData";
+import renderAsFetch from "./renderAsFetch";
 
-const response = fetchDummyData();
+const response = renderAsFetch();
 
 export default function ChildComponent() {
   const dummyData = response.read();

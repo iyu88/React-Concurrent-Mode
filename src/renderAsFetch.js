@@ -29,7 +29,7 @@ const wrapPromise = (promise) => {
   return { read };
 };
 
-const fetchDummyData = () => {
+const renderAsFetch = () => {
   const requestURL = "https://jsonplaceholder.typicode.com/photos";
   try {
     const response = axios.get(requestURL);
@@ -39,4 +39,4 @@ const fetchDummyData = () => {
   }
 };
 
-export default fetchDummyData;
+export default renderAsFetch;
