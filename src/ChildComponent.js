@@ -28,6 +28,11 @@ export default function ChildComponent() {
       ) : (
         <h1> 데이터 로딩 중...</h1>
       )}
+      {dummyCommentData.length ? (
+        dummyCommentData.map((d) => <h4 key={d.id}>{JSON.stringify(d)}</h4>)
+      ) : (
+        <h1> 데이터 로딩 중...</h1>
+      )}
     </div>
   );
 }
