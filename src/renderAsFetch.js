@@ -20,19 +20,19 @@ const wrapPromise = (promise) => {
       case "pending":
         throw suspender;
       case "error":
-        throw response;
+        throw response.data;
       default:
-        return response;
+        return response.data;
     }
   };
 
   return { read };
 };
 
-const renderAsFetch = () => {
-  const requestURL = "https://jsonplaceholder.typicode.com/photos";
+const renderAsFetch = (path) => {
+  const requestURL = "https://jsonplaceholder.typicode.com/";
   try {
-    const response = axios.get(requestURL);
+    const response = axios.get(requestURL + path);
     return wrapPromise(response);
   } catch (err) {
     console.log(err);

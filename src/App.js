@@ -1,12 +1,18 @@
 import { Suspense } from "react";
 import "./App.css";
-import ChildComponent from "./ChildComponent";
+import ChildPhotoList from "./ChildPhotoList";
+import ChildCommentList from "./ChildCommentList";
 
 function App() {
   return (
-    <Suspense fallback={<h1>데이터 로딩 중...</h1>}>
-      <ChildComponent />
-    </Suspense>
+    <>
+      <Suspense fallback={<h1>데이터 로딩 중...</h1>}>
+        <ChildPhotoList />
+      </Suspense>
+      <Suspense fallback={<h1>데이터 로딩 중...</h1>}>
+        <ChildCommentList />
+      </Suspense>
+    </>
   );
 }
 
