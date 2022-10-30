@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import fetchThenRender from "./fetchThenRender";
+
+const photoData = fetchThenRender();
 
 export default function ChildComponent() {
   const [dummyData, setDummyData] = useState([]);
 
   useEffect(() => {
-    const dataUrl = "https://jsonplaceholder.typicode.com/photos";
-    const fetchOnRender = async () => {
-      try {
-        const response = await axios.get(dataUrl);
-        setDummyData(response.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchOnRender();
+    photoData.then((response) => {
+      setDummyData(response.data);
+    });
   }, []);
 
   return (
@@ -24,7 +19,6 @@ export default function ChildComponent() {
       ) : (
         <h1> 데이터 로딩 중...</h1>
       )}
-      <img src="./image.JPG" alt="테스트 이미지" width="100px" />
     </div>
   );
 }
